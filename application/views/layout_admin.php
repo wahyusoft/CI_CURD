@@ -11,16 +11,16 @@
     <title><?php echo APPNAME;?></title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo base_url();?>asset/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url();?>asset/css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/sb-admin.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="<?php echo base_url();?>asset/css/plugins/morris.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/plugins/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<?php echo base_url();?>asset/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url();?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="<?php echo base_url('asset/datatables/css/dataTables.bootstrap.css')?>" rel="stylesheet">    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,14 +28,13 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<script src="<?php echo base_url('asset/jquery/jquery-2.1.4.min.js')?>"></script>
-	<script src="<?php echo base_url('asset/js/bootstrap.min.js')?>"></script>
-	<script src="<?php echo base_url('asset/datatables/js/jquery.dataTables.min.js')?>"></script>
-	<script src="<?php echo base_url('asset/datatables/js/dataTables.bootstrap.js')?>"></script>
+	<script src="<?php echo base_url('assets/jquery/jquery-2.1.4.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/js/bootstrap.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/datatables/js/jquery.dataTables.min.js')?>"></script>
+	<script src="<?php echo base_url('assets/datatables/js/dataTables.bootstrap.js')?>"></script>
 </head>
 
 <body>
-<?php echo base_url();?>assets/css/bootstrap.min.css
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -171,10 +170,16 @@
 	
 
     <!-- Morris Charts JavaScript -->
-    <script src="<?php echo base_url();?>asset/js/plugins/morris/raphael.min.js"></script>
-    <script src="<?php echo base_url();?>asset/js/plugins/morris/morris.min.js"></script>
-    <script src="<?php echo base_url();?>asset/js/plugins/morris/morris-data.js"></script>
-	
+    <script src="<?php echo base_url();?>assets/js/plugins/morris/raphael.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/plugins/morris/morris.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/plugins/morris/morris-data.js"></script>
+	<?php 
+	foreach($css_files as $file): ?>
+		<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+	<?php endforeach; ?>
+	<?php foreach($js_files as $file): ?>
+		<script src="<?php echo $file; ?>"></script>
+	<?php endforeach; ?>
 </body>
 
 </html>
