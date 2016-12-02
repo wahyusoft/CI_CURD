@@ -1,12 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Products_model extends CI_Model {
+class Suppliers_model extends CI_Model {
     
-	var $table = 'products';
-	var $pk    = 'ProductID';
-	var $column_order = array('ProductID','ProductName','SupplierID','CategoryID'); //set column field database for datatable orderable
-	var $column_search = array('ProductName'); //set column field database for datatable searchable just firstname , lastname , address are searchable
-	var $order = array('ProductID' => 'DESC');
+	var $table = 'suppliers';
+	var $pk    = 'SupplierID';
+	var $column_order = array('SupplierID','CompanyName','ContactName','ContactTitle'); //set column field database for datatable orderable
+	var $column_search = array('CompanyName','ContactName','ContactTitle'); //set column field database for datatable searchable just firstname , lastname , address are searchable
+	var $order = array('SupplierID' => 'DESC');
 	
 	
     private function _get_datatables_query()
@@ -97,7 +97,9 @@ class Products_model extends CI_Model {
 		$this->db->delete($this->table);
 	}
     
-    
+    public function get_all(){
+		return $this->db->get($this->table)->result();
+	}
 }
 
 ?>

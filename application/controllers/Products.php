@@ -4,7 +4,10 @@ class Products extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
-        $this->load->model('Products_model','PM');        
+		$load_model = array('Products_model'=>'PM',
+							'Categories_model'=>'CM',
+							'Suppliers_model'=>'SM');
+        $this->load->model($load_model);        
     }
 
     public function index()

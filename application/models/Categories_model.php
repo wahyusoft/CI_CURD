@@ -96,6 +96,10 @@ class Categories_model extends CI_Model {
 		$this->db->where($this->pk, $id);
 		$this->db->delete($this->table);
 	}
+	
+	public function get_all(){
+		return $this->db->get($this->table)->result();
+	}
     
     
 }
